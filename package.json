@@ -1,0 +1,26 @@
+{
+  "name": "ya-praktikum-final",
+  "version": "0.0.1",
+  "description": "Yandex Praktikum final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcw/ya-praktikum-final.git"
+  },
+  "author": "Ilia Byzov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcw/ya-praktikum-final/issues"
+  },
+  "homepage": "https://github.com/vcw/ya-praktikum-final#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-md5-hash": "0.0.6"
+  }
+}
