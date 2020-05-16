@@ -1,0 +1,8 @@
+.header__navlist-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__navlist-link:hover {
+  color: #fff;
+}
