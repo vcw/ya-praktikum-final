@@ -52,7 +52,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[chunkhash].[ext]',
+              name: '[name].[ext]',
               outputPath: 'images'
             }
           },
