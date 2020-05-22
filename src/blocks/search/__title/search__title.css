@@ -1,0 +1,23 @@
+.search__title {
+  margin: 0 .8rem;
+  max-width: 19.25rem;
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  color: #fff;
+}
+
+@media only screen and (min-width: 480px) {
+  .search__title {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .search__title {
+    max-width: 30.4rem;
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+}
