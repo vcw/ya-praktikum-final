@@ -1,0 +1,15 @@
+.card__content {
+  padding: .75rem .8rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .card__content {
+    padding: .8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .card__content {
+    padding: 1rem 1.2rem 1.2rem;
+  }
+}
