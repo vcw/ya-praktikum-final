@@ -1,0 +1,15 @@
+.button_theme_simple {
+  color: #1A1B22;
+  background-color: #fff;
+  border: 0.05rem solid #fff;
+  box-shadow: none;
+}
+
+.button_theme_simple:focus {
+  border: 0.05rem solid #1A1B22;
+}
+
+.button_theme_simple:hover {
+  background-color: #E8E8E9;
+  border: 0.05rem solid #E8E8E9;
+}
