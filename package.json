@@ -46,5 +46,8 @@
     "firefox 56",
     "safari 11",
     "edge 15"
-  ]
+  ],
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1"
+  }
 }
