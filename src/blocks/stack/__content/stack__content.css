@@ -1,0 +1,18 @@
+.stack__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .stack__content {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .stack__content {
+    margin-top: 0;
+  }
+}
