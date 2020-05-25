@@ -1,0 +1,7 @@
+.footer__contacts-item {
+  height: 1rem;
+}
+
+.footer__contacts-item:not(:last-child) {
+  margin-right: 1.4rem;
+}
