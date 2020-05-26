@@ -1,6 +1,6 @@
 .card__description {
   margin: .5rem 0 .25rem;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: .8rem;
   line-height: 1.1rem;
