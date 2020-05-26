@@ -1,0 +1,7 @@
+.analytics__row {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: .8rem;
+  align-items: center;
+  padding: .4rem 0;
+}

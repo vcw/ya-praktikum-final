@@ -1,0 +1,5 @@
+.analytics__heading {
+  align-items: flex-start;
+  text-transform: uppercase;
+  border-bottom: .05rem solid #1A1B22;
+}
