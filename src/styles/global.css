@@ -8,3 +8,9 @@ body {
   font-size: 20px;
   color: #1A1B22;
 }
+
+.container__max {
+  margin: 0 auto;
+  max-width: 62.6rem;
+  width: 100%;
+}

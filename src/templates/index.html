@@ -37,41 +37,43 @@
         </form>
       </div>
     </div>
-    <main class="container__results results">
-      <div class="results__header">
-        <h2 class="results__title title">Результаты поиска</h2>
-        <a href="paper.html" class="results__link">Посмотреть аналитику</a>
+    <main class="container__results">
+      <div class="container__max results">
+        <div class="results__header">
+          <h2 class="results__title title">Результаты поиска</h2>
+          <a href="paper.html" class="results__link">Посмотреть аналитику</a>
+        </div>
+        <div class="results__cards">
+          <article class="card">
+            <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
+            <div class="card__content">
+              <p class="subtitle card__date">2 августа, 2019</p>
+              <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
+              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+              <p class="card__source">Лента.ру</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
+            <div class="card__content">
+              <p class="subtitle card__date">2 августа, 2019</p>
+              <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
+              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+              <p class="card__source">Лента.ру</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
+            <div class="card__content">
+              <p class="subtitle card__date">2 августа, 2019</p>
+              <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
+              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
+              <p class="card__source">Лента.ру</p>
+            </div>
+          </article>
+        </div>
+        <button class="results__button button button_theme_simple">Показать ещё</button>
       </div>
-      <div class="results__cards">
-        <article class="card">
-          <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
-          <div class="card__content">
-            <p class="subtitle card__date">2 августа, 2019</p>
-            <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
-            <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
-          <div class="card__content">
-            <p class="subtitle card__date">2 августа, 2019</p>
-            <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
-            <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
-          <div class="card__content">
-            <p class="subtitle card__date">2 августа, 2019</p>
-            <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
-            <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-            <p class="card__source">Лента.ру</p>
-          </div>
-        </article>
-      </div>
-      <button class="results__button button button_theme_simple">Показать ещё</button>
     </main>
     <div class="container__results results">
       <img src="<%=require('../assets/not-found.svg').default%>" alt="Ничего не найдено" class="results__not-found-img">
@@ -82,12 +84,14 @@
       <i class="circle-preloader"></i>
       <p class="subtitle results__preloader-text">Идет поиск новостей...</p>
     </div>
-    <div class="container__about about">
-      <img src="<%=require('../assets/avatar.png').default%>" alt="Фото" class="about__photo">
-      <div class="about__content">
-        <h2 class="title about__title">Об авторе</h2>
-        <p class="about__info">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="about__info">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+    <div class="container__about">
+      <div class="container__max about">
+        <img src="<%=require('../assets/avatar.png').default%>" alt="Фото" class="about__photo">
+        <div class="about__content">
+          <h2 class="title about__title">Об авторе</h2>
+          <p class="about__info">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="about__info">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        </div>
       </div>
     </div>
     <footer class="footer container__footer">
