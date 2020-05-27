@@ -5,7 +5,7 @@ export default class News {
 
   _processResponseWithNews(response) {
     let articles = response.articles;
-    articles.reduce((accumulator, current) => {
+    return articles.reduce((accumulator, current) => {
       const { title, publishedAt, description, urlToImage } = current;
       const source = current.source.name;
       accumulator.push({
@@ -17,7 +17,6 @@ export default class News {
       })
       return accumulator;
     }, []);
-    return articles;
   }
 
   getNews(keyword, fromDate) {
