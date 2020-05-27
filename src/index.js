@@ -1,14 +1,16 @@
 import './styles/global.css';
 import './blocks/fonts/fonts.css';
 import './blocks/container/container.css';
-import './blocks/container/__header/container__header.css';
-import './blocks/header/header.css';
-import './blocks/header/__container/header__container.css';
-import './blocks/header/__logo/header__logo.css';
-import './blocks/header/__navlist/header__navlist.css';
-import './blocks/header/__navlist-item/header__navlist-item.css';
-import './blocks/header/__navlist-item/_active/header__navlist-item_active.css';
-import './blocks/header/__navlist-link/header__navlist-link.css';
+
+import './styles/main-header.js'
+// import './blocks/container/__header/container__header.css';
+// import './blocks/header/header.css';
+// import './blocks/header/__container/header__container.css';
+// import './blocks/header/__logo/header__logo.css';
+// import './blocks/header/__navlist/header__navlist.css';
+// import './blocks/header/__navlist-item/header__navlist-item.css';
+// import './blocks/header/__navlist-item/_active/header__navlist-item_active.css';
+// import './blocks/header/__navlist-link/header__navlist-link.css';
 
 import './blocks/container/__search/container__search.css';
 import './blocks/search/__title/search__title.css';
@@ -54,3 +56,40 @@ import './blocks/footer/__contacts/footer__contacts.css';
 import './blocks/footer/__contacts-item/footer__contacts-item.css';
 import './blocks/footer/__copyright/footer__copyright.css';
 import './blocks/footer/__navigation/footer__navigation.css';
+
+
+
+import News from './scripts/modules/news.js';
+import NewsCard from './scripts/components/newsCard.js';
+import NewsCardList from './scripts/components/newsCardList.js';
+import DateExtended from './scripts/utils/dateExtended.js';
+
+const api_key = '3b4a1ba7f9c947e6a829644748b3bd90';
+
+const news = new News(api_key);
+const date = new DateExtended().substractDays(6).toISOString().split('T')[0];
+
+function doSearch(keyword) {
+  news.getNews(keyword, date)
+  .then(articles => articles.map(article => {
+    const newsCardComponent = new NewsCard(article);
+    return newsCardComponent.makeNewsCard();
+  }))
+  .then(cards => {
+    const cardsContainer = document.querySelector('.results__cards');
+    const cardList = new NewsCardList(cards, cardsContainer);
+    cardList.placeCards();
+  });
+}
+
+
+const searchButton = document.querySelector('.search__button');
+
+searchButton.addEventListener('click', event => {
+  event.preventDefault();
+
+  const inputField = document.querySelector('.search__field');
+  const keyword = inputField.value;
+
+  doSearch(keyword);
+})
