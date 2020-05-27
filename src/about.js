@@ -1,41 +1,56 @@
 import './styles/global.css';
 import './blocks/fonts/fonts.css';
 import './blocks/container/container.css';
-import './blocks/header/header.css';
-import './blocks/header/_theme_simple/header_theme_simple.css';
-import './blocks/header/__container/header__container.css';
-import './blocks/header/__logo/header__logo.css';
-import './blocks/header/__logo/_theme_simple/header__logo_theme_simple.css';
-import './blocks/header/__navlist/header__navlist.css';
-import './blocks/header/__navlist-item/header__navlist-item.css';
-import './blocks/header/__navlist-item/_active_simple/header__navlist-item_active_simple.css';
-import './blocks/header/__navlist-link/header__navlist-link.css';
-import './blocks/header/__navlist-link/_theme_simple/header__navlist-link_theme_simple.css';
+
+import './styles/simple-header.js';
 
 import './blocks/title/title.css';
 import './blocks/container/__info/container__info.css';
 import './blocks/info/__text/info__text.css';
 
-import './blocks/container/__about/container__about.css';
-import './blocks/about/about.css';
-import './blocks/about/__photo/about__photo.css';
-import './blocks/about/__info/about__info.css';
-import './blocks/about/__title/about__title.css';
+import './styles/about.js';
+import './styles/stack.js'
+import './styles/footer.js';
 
-import './blocks/container/__stack/container__stack.css';
-import './blocks/stack/stack.css';
-import './blocks/stack/__title/stack__title.css';
-import './blocks/stack/__content/stack__content.css';
-import './blocks/stack/__name/stack__name.css';
-import './blocks/stack/__img/stack__img.css';
+import Glide from '@glidejs/glide';
 
-import './scripts/commits.js';
+import Github from './scripts/modules/github.js';
+import Commit from './scripts/components/commit.js';
+import CommitList from './scripts/components/commitsList.js';
 
-import './blocks/container/__footer/container__footer.css';
-import './blocks/footer/footer.css';
-import './blocks/footer/__navlist/footer__navlist.css';
-import './blocks/footer/__navlist-link/footer__navlist-link.css';
-import './blocks/footer/__contacts/footer__contacts.css';
-import './blocks/footer/__contacts-item/footer__contacts-item.css';
-import './blocks/footer/__copyright/footer__copyright.css';
-import './blocks/footer/__navigation/footer__navigation.css';
+import '@/../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
+
+import '@/blocks/subtitle/subtitle.css'
+import '@/blocks/title/title.css'
+import '@/blocks/title/_size_m/title_size_m.css';
+
+import './styles/commits.js';
+
+import '@/blocks/glide/glide.css';
+import '@/blocks/glide/__slide/glide__slide.css';
+import '@/blocks/glide/__bullets/glide__bullets.css';
+import '@/blocks/glide/__bullet/glide__bullet.css';
+import '@/blocks/glide/__bullet/--active/glide__bullet--active.css'
+
+const gh = new Github();
+gh.getCommits('vcw', 'ya-praktikum-final')
+  .then(commits => commits.map(commit => {
+      const commitComponent = new Commit(commit);
+      return commitComponent.makeCommitSlide()
+    }))
+    .then(slides => {
+      const cl = new CommitList(slides, document.querySelector('.glide'));
+      cl.placeSlidesWithBullets();
+
+      new Glide('.glide', {
+        perView: 3,
+        breakpoints: {
+          600: {
+            perView: 1
+          },
+          800: {
+            perView: 2
+          }
+        }
+      }).mount()
+    });
