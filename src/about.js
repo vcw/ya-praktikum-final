@@ -36,7 +36,7 @@ const gh = new Github();
 gh.getCommits('vcw', 'ya-praktikum-final')
   .then(commits => commits.map(commit => {
       const commitComponent = new Commit(commit);
-      return commitComponent.makeCommitSlide()
+      return commitComponent.makeCommitSlide();
     }))
     .then(slides => {
       const cl = new CommitList(slides, document.querySelector('.glide'));
