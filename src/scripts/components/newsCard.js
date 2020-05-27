@@ -25,8 +25,8 @@ export default class NewsCard {
     imgContainer.setAttribute('alt', this.props.title);
 
     // Приводим дату к нужному формату и записываем её в элемент
-    const date = this.processDate(this.props.publishedAt);
-    template.querySelector('.card__date').textContent = date;
+    const date = new DateExtended(this.props.publishedAt);
+    template.querySelector('.card__date').textContent = date.getFormattedDate();
 
     // Заголовок
     template.querySelector('.card__title').textContent = this.props.title;

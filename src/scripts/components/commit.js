@@ -1,4 +1,4 @@
-import processDate from '../utils/processDate.js';
+import DateExtended from '../utils/dateExtended.js';
 
 export default class Commit {
   constructor(props) {
@@ -15,7 +15,10 @@ export default class Commit {
     template.querySelector('.commits__name').textContent = this.props.name;
     template.querySelector('.commits__email').textContent = this.props.email;
     template.querySelector('.commits__message').textContent = this.props.message;
-    template.querySelector('.commits__date').textContent = processDate(this.props.date);
+
+    // преобразуем дату и заполняем её в шаблон
+    const date = new DateExtended(this.props.date);
+    template.querySelector('.commits__date').textContent = date.getFormattedDate();
 
     return template;
   }

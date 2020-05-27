@@ -23,4 +23,11 @@ export default class DateExtended extends Date {
 
     return months[this.getMonth()];
   }
+
+  getFormattedDate() {
+    const day = this.getDate();
+    const month = this.getMonthInRussianGenetive();
+    const year = this.getFullYear();
+    return `${day} ${month}, ${year}`;
+  }
 }
