@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сервис поиска новостей по ключевому слову">
+  <meta name="author" content="Илья Бызов">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NewsAnalyzer | Аналитика</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header header_theme_simple">
+      <div class="header__container">
+        <h1 class="header__logo header__logo_theme_simple">NewsAnalyzer</h1>
+        <nav class="header__nav">
+          <ul class="header__navlist">
+            <li class="header__navlist-item">
+              <a href="index.html" class="header__navlist-link header__navlist-link_theme_simple">Главная</a>
+            </li>
+            <li class="header__navlist-item">
+              <a href="about.html" class="header__navlist-link header__navlist-link_theme_simple">О проекте</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container__about">
+      <div class="container__max">
+        <div class="analytics__nav">
+          <p class="text">Главная</p>
+          <p class="subtitle">/</p>
+          <p class="subtitle">Аналитика</p>
+        </div>
+        <h2 class="title">Вы спросили: «Путешествия»</h2>
+        <div class="analytics__numbers">
+          <p class="text">Новостей за неделю: <strong>34 324</strong></p>
+          <p class="text">Упоминаний в загаловках: <strong>235</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="container__analytics">
+      <div class="container__max analytics">
+        <h2 class="title title_size_m">Аналитика по дням</h2>
+        <div class="analytics__table">
+          <div class="analytics__heading analytics__row">
+            <p class="subtitle">Дата (август)</p>
+            <p class="subtitle">Кол-во упоминаний</p>
+          </div>
+          <div class="analytics__row analytics__scale">
+            <p class="analytics__date"></p>
+            <div class="analytics__scale-bar">
+              <p class="subtitle">0</p>
+              <p class="subtitle">25</p>
+              <p class="subtitle">50</p>
+              <p class="subtitle">75</p>
+              <p class="subtitle">100</p>
+            </div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">19, пн</p>
+            <div class="analytics__bar" style="width: 15%">15</div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">20, вт</p>
+            <div class="analytics__bar" style="width: 18%">18</div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">21, ср</p>
+            <div class="analytics__bar" style="width: 11%">11</div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">22, чт</p>
+            <div class="analytics__bar" style="width: 39%">39</div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">23, пт</p>
+            <div class="analytics__bar" style="width: 45%">45</div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">24, сб</p>
+            <div class="analytics__bar" style="width: 73%">73</div>
+          </div>
+          <div class="analytics__row">
+            <p class="analytics__date">25, вс</p>
+            <div class="analytics__bar" style="width: 34%">34</div>
+          </div>
+          <div class="analytics__row analytics__scale">
+            <p class="analytics__date"></p>
+            <div class="analytics__scale-bar">
+              <p class="subtitle">0</p>
+              <p class="subtitle">25</p>
+              <p class="subtitle">50</p>
+              <p class="subtitle">75</p>
+              <p class="subtitle">100</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer container__footer">
+      <ul class="footer__navigation footer__navlist">
+        <li>
+          <a href="index.html" class="footer__navlist-link">Главная</a>
+        </li>
+        <li>
+          <a href="about.html" class="footer__navlist-link">О проекте</a>
+        </li>
+        <li>
+          <a href="https://praktikum.yandex.ru" class="footer__navlist-link" target="_blank">Яндекс.Практикум</a>
+        </li>
+      </ul>
+      <ul class="footer__contacts footer__navlist">
+        <li class="footer__contacts-item">
+          <a href="https://github.com/vcw" class="footer__navlist-link" target="_blank">
+            <img src="<%=require('../assets/github.svg').default%>" alt="Github" class="footer__icon">
+          </a>
+        </li>
+        <li class="footer__contacts-item">
+          <a href="https://facebook.com/vuode" class="footer__navlist-link" target="_blank">
+            <img src="<%=require('../assets/facebook.svg').default%>" alt="Facebook" class="footer__icon">
+          </a>
+        </li>
+      </ul>
+      <p class="footer__copyright subtitle">© 2020 Илья Бызов</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.results__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .4rem;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 512px) {
+  .results__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .results__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .results__cards {
+    gap: .8rem;
+  }
+}

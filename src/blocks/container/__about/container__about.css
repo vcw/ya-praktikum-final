@@ -1,0 +1,15 @@
+.container__about {
+  padding: 1.6rem .8rem 2.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .container__about {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container__about {
+    padding: 4rem 5.2rem;
+  }
+}

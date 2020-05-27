@@ -1,0 +1,10 @@
+.commits {
+  display: grid;
+  background-color: #F5F6F7;
+}
+
+@media only screen and (min-width: 425px) {
+  .commits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

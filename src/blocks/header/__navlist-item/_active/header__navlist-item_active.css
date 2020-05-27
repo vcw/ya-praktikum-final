@@ -1,0 +1,4 @@
+.header__navlist-item_active {
+  color: #fff;
+  border-bottom: .15rem solid #fff;
+}

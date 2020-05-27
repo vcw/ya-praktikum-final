@@ -1,0 +1,23 @@
+.container__footer {
+  margin: 1rem .8rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .container__footer {
+    margin: 1.2rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container__footer {
+    margin: 1.5rem 5.2rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container__footer {
+    margin: 1.5rem auto;
+    max-width: 61.6rem;
+    width: 100%;
+  }
+}

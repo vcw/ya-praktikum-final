@@ -1,0 +1,17 @@
+.container__search {
+  margin: 1.5rem auto 1.6rem;
+  max-width: 22.6rem; 
+}
+
+@media only screen and (min-width: 480px) {
+  .container__search {
+    margin: 2rem auto 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container__search {
+    margin: 4rem auto;
+    max-width: 30.4rem;
+  }
+}

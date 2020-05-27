@@ -1,0 +1,15 @@
+.glide__bullet {
+  appearance: none;
+  padding: 0;
+  margin: .2rem;
+  width: .4rem;
+  height: .4rem;
+  background-color: #D1D2D6;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.glide__bullet:focus {
+  outline: none;
+}

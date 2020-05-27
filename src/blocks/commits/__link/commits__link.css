@@ -1,0 +1,39 @@
+.commits__link {
+  order: 1;
+  display: block;
+  padding: .8rem;
+  margin-top: .8rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: .9rem;
+  line-height: 1.2rem;
+  color: #1A1B22;
+  border: 1px solid #000;
+  border-radius: 5rem;
+}
+
+.commits__link:hover {
+  background-color: #E8E8E9;
+}
+
+@media only screen and (min-width: 425px) {
+  .commits__link {
+    align-self: flex-start;
+    justify-self: end;
+    order: 0;
+    margin-top: 0;
+    padding: 0;
+    padding-right: .8em;
+    text-align: left;
+    background-image: url('../../../assets/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    border: none;
+  }
+
+  .commits__link:hover {
+    background-color: unset;
+  }
+}

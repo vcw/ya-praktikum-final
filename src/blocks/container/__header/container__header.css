@@ -1,0 +1,38 @@
+.container__header {
+  background-image: url('../../../assets/header-background-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+@media only screen and (min-width: 320px) {
+  .container__header {
+    background-size: 100% auto;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .container__header {
+    background-image: url('../../../assets/header-background-2.jpg');
+    background-size: auto 100%;
+  }
+}
+
+@media only screen and (min-width: 752px) {
+  .container__header {
+    background-size: 100% auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container__header {
+    background-image: url('../../../assets/header-background-3.jpg');
+    background-size: auto 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container__header {
+    background-size: 100% auto;
+  }
+}

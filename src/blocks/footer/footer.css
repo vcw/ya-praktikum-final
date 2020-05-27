@@ -1,0 +1,12 @@
+.footer {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 1.75rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr 2.5fr .5fr;
+    align-items: center;
+  }
+}

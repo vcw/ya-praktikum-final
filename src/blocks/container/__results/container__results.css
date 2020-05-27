@@ -1,0 +1,16 @@
+.container__results {
+  padding: 1.6rem .8rem 2.2rem;
+  background-color: #F5F6F7;
+}
+
+@media only screen and (min-width: 768px) {
+  .container__results {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container__results {
+    padding: 4rem 5.2rem;
+  }
+}

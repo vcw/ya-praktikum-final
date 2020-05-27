@@ -1,0 +1,11 @@
+.title_size_m {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .title_size_m {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+}
