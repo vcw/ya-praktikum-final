@@ -2,7 +2,7 @@ import DateExtended from '../utils/dateExtended.js';
 
 export default class NewsCard {
   constructor(props) {
-    this.props = props; // { sourceName, title, description, publishedAt, urlToImage }
+    this.props = props; // { source, title, description, publishedAt, urlToImage }
   }
 
   processDate(date) {
@@ -35,8 +35,7 @@ export default class NewsCard {
     template.querySelector('.card__description').textContent = this.props.description;
 
     // Источник
-    template.querySelector('.card__source').textContent = this.props.sourceName;
-
+    template.querySelector('.card__source').textContent = this.props.source;
     return template;
   }
 }
