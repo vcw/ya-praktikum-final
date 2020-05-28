@@ -1,6 +1,6 @@
 export default class News {
   constructor(apiKey) {
-    this.apiKey = apiKey;
+    this._apiKey = apiKey;
   }
 
   _processResponseWithNews(response) {
@@ -20,7 +20,7 @@ export default class News {
   }
 
   getNews(keyword, fromDate) {
-    const url = `https://praktikum.tk/news/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=3b4a1ba7f9c947e6a829644748b3bd90`;
+    const url = `https://praktikum.tk/news/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
 
     return fetch(url)
     .then(response => response.json())
