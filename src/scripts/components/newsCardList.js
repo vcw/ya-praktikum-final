@@ -1,6 +1,5 @@
 export default class NewsCardList {
-  constructor(cards, container) {
-    this._cards = cards;
+  constructor(container) {
     this._container = container;
     this._nextIndex = 0;
 
@@ -15,9 +14,18 @@ export default class NewsCardList {
     const notFoundTemplate = document.querySelector('.not-found-template');
     this._notFoundTemplate = document.importNode(notFoundTemplate.content, true);
 
+    const preloaderTemplate = document.querySelector('.preloader-template');
+    this._preloaderTemplate = document.importNode(preloaderTemplate.content, true);
+
     this.render = this.render.bind(this);
+    this.showPreloader = this.showPreloader.bind(this);
+    this.addCards = this.addCards.bind(this);
 
     this._button.addEventListener('click', this.renderNext.bind(this));
+  }
+
+  addCards(cards) {
+    this._cards = cards;
   }
 
   _clearContainer() {
@@ -47,6 +55,12 @@ export default class NewsCardList {
 
   _toggleNotFound(bool) {
     this._container.querySelector('.results').appendChild(this._notFoundTemplate);
+    this._container.style.display = 'block';
+  }
+
+  showPreloader() {
+    this._clearContainer();
+    this._container.querySelector('.results').appendChild(this._preloaderTemplate);
     this._container.style.display = 'block';
   }
 

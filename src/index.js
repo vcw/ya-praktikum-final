@@ -70,13 +70,17 @@ const news = new News(api_key);
 const date = new DateExtended().substractDays(6).toISOString().split('T')[0];
 
 function doSearch(keyword) {
+  const container = document.querySelector('.container__results');
+  const cardList = new NewsCardList(container);
+
+  cardList.showPreloader()
+
   news.getNews(keyword, date)
   .then(articles => articles.map(article => {
     return new NewsCard(article);
   }))
   .then(cards => {
-    const container = document.querySelector('.container__results');
-    const cardList = new NewsCardList(cards, container);
+    cardList.addCards(cards);
     cardList.render();
   });
 }
