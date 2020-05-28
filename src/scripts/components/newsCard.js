@@ -10,10 +10,12 @@ export default class NewsCard {
     let template = document.querySelector('.news-card-template');
     template = document.importNode(template.content, true);
 
-    // Задаём атрибуты для изображения
-    const imgContainer = template.querySelector('.card__image');
-    imgContainer.setAttribute('src', this.props.urlToImage);
-    imgContainer.setAttribute('alt', this.props.title);
+    // Задаём атрибуты для изображения, если оно есть
+    if (this.props.urlToImage) {
+      const imgContainer = template.querySelector('.card__image');
+      imgContainer.setAttribute('src', this.props.urlToImage);
+      imgContainer.setAttribute('alt', this.props.title);
+    }
 
     // Приводим дату к нужному формату и записываем её в элемент
     const date = new DateExtended(this.props.publishedAt);
