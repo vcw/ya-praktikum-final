@@ -16,7 +16,6 @@ export default class NewsCardList {
     this._notFoundTemplate = document.importNode(notFoundTemplate.content, true);
 
     this.render = this.render.bind(this);
-    // this.renderNext = this.renderNext.bind(this);
 
     this._button.addEventListener('click', this.renderNext.bind(this));
   }

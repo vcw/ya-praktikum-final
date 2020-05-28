@@ -59,7 +59,7 @@ import './blocks/footer/__navigation/footer__navigation.css';
 
 
 
-import News from './scripts/modules/news.js';
+import News from './scripts/models/news.js';
 import NewsCard from './scripts/components/newsCard.js';
 import NewsCardList from './scripts/components/newsCardList.js';
 import DateExtended from './scripts/utils/dateExtended.js';
