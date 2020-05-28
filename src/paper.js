@@ -37,3 +37,18 @@ import './blocks/footer/__contacts/footer__contacts.css';
 import './blocks/footer/__contacts-item/footer__contacts-item.css';
 import './blocks/footer/__copyright/footer__copyright.css';
 import './blocks/footer/__navigation/footer__navigation.css';
+
+import Stats from './scripts/utils/stats.js';
+
+const keyword = window.sessionStorage.getItem('keyword');
+const cards = JSON.parse(window.sessionStorage.getItem('articles'));
+
+if (keyword && cards) {
+  const stats = new Stats(cards, keyword);
+
+  const numbers = document.querySelector('.container__about');
+  
+  numbers.querySelector('.title').textContent = `Вы спросили: «${keyword}»`;
+  numbers.querySelector('.analytics__all').textContent = stats.getAllMentions();
+  numbers.querySelector('.analytics__titles').textContent = stats.getTitleMentions();  
+}
