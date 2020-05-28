@@ -62,4 +62,7 @@ if (keyword && cards) {
     bar.style.width = `${currentDay.mentions}%`;
     bar.textContent = currentDay.mentions;
   });
+
+  const month = stats.getLastWeekMonth();
+  document.querySelector('.analytics__month').textContent = `Дата (${month})`
 }

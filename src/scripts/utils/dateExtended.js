@@ -24,6 +24,25 @@ export default class DateExtended extends Date {
     return months[this.getMonth()];
   }
 
+  getMonthInRussianNominative(month) {
+    const months = [
+      'январь',
+      'февраль',
+      'март',
+      'апрель',
+      'май',
+      'июнь',
+      'июль',
+      'август',
+      'сентябрь',
+      'октябрь',
+      'ноябрь',
+      'декабрь'
+    ]
+
+    return months[month];
+  }
+
   getFormattedDate() {
     const day = this.getDate();
     const month = this.getMonthInRussianGenetive();

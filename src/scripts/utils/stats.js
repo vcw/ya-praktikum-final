@@ -17,29 +17,58 @@ export default class Stats {
     }, 0);
   }
 
-  getLastSevenDates() {
+  _getLastSevenDates() {
     return [6, 5, 4, 3, 2, 1, 0].map(offset => {
       const date = new DateExtended();
       return date.substractDays(offset);
     });
   }
 
-  getDatesWithMentions() {
+  _getDatesWithMentions() {
     return this._articles.reduce((accumulator, current) => {
       const date = new DateExtended(current.publishedAt).getStringDate();
       if (accumulator[date]) {
         accumulator[date] += 1;
-        return accumulator;
       } else {
         accumulator[date] = 1;
-        return accumulator;
       }
+      return accumulator;
     }, {});
   }
 
+  getLastWeekMonth() {
+    const dates = this._getLastSevenDates();
+    const months = dates.reduce((accumulator, current) => {
+      const month = current.getMonth();
+      if (accumulator[month]) {
+        accumulator[month] += 1;
+      } else {
+        accumulator[month] = 1; 
+      }
+      return accumulator;
+    }, {});
+    const monthNumber = Object.keys(months).reduce((accumulator, current) => {
+      const stored = months[accumulator];
+      const pending = months[current];
+
+      const eventA = stored < pending;
+      const eventB = stored > pending;
+
+      // A | B | return
+      // --------------
+      // 1 | 0 | accumulator
+      // 0 | 1 | current
+      // 0 | 0 | current
+
+      return ((eventA && !eventB) || (!eventA && eventB)) ? accumulator : current;
+    }, 0)
+    
+    return new DateExtended().getMonthInRussianNominative(monthNumber);
+  }
+
   getLastWeekStats() {
-    const dates = this.getLastSevenDates();
-    const datesWithMentions = this.getDatesWithMentions();
+    const dates = this._getLastSevenDates();
+    const datesWithMentions = this._getDatesWithMentions();
 
     return dates.map(date => {
       const stringDate = date.getStringDate();
