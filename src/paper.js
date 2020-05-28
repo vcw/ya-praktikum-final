@@ -50,5 +50,16 @@ if (keyword && cards) {
   
   numbers.querySelector('.title').textContent = `Вы спросили: «${keyword}»`;
   numbers.querySelector('.analytics__all').textContent = stats.getAllMentions();
-  numbers.querySelector('.analytics__titles').textContent = stats.getTitleMentions();  
+  numbers.querySelector('.analytics__titles').textContent = stats.getTitleMentions();
+  
+  const mentionsStats = stats.getLastWeekStats();
+
+  [0, 1, 2, 3, 4, 5, 6].forEach(index => {
+    const currentDay = mentionsStats[index];
+    const row = document.querySelector(`.row__${index}`);
+    row.querySelector('.analytics__date').textContent = currentDay.date;
+    const bar = row.querySelector('.analytics__bar');
+    bar.style.width = `${currentDay.mentions}%`;
+    bar.textContent = currentDay.mentions;
+  });
 }

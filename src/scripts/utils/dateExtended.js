@@ -30,4 +30,22 @@ export default class DateExtended extends Date {
     const year = this.getFullYear();
     return `${day} ${month}, ${year}`;
   }
+
+  getStringDate() {
+    return this.toISOString().split('T')[0];
+  }
+
+  getTwoLetterDayInRussian() {
+    const days = [
+      'пн',
+      'вт',
+      'ср',
+      'чт',
+      'пт',
+      'сб',
+      'вс'
+    ]
+
+    return days[this.getDay()];
+  }
 }
