@@ -80,6 +80,8 @@ function doSearch(keyword) {
     return new NewsCard(article);
   }))
   .then(cards => {
+    window.sessionStorage.setItem('articles', JSON.stringify(cards));
+    window.sessionStorage.setItem('keyword', keyword);
     cardList.addCards(cards);
     cardList.render();
   });
