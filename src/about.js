@@ -14,7 +14,7 @@ import './styles/footer.js';
 
 import Glide from '@glidejs/glide';
 
-import Github from './scripts/modules/github.js';
+import Github from './scripts/models/github.js';
 import Commit from './scripts/components/commit.js';
 import CommitList from './scripts/components/commitsList.js';
 
