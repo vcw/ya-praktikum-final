@@ -5,15 +5,6 @@ export default class NewsCard {
     this.props = props; // { source, title, description, publishedAt, urlToImage }
   }
 
-  processDate(date) {
-    const extDate = new DateExtended(date);
-
-    const day = extDate.getDate();
-    const month = extDate.getMonthInRussianGenetive();
-    const year = extDate.getFullYear();
-    return `${day} ${month}, ${year}`;
-  }
-
   makeNewsCard() {
     // импортируем шаблон
     let template = document.querySelector('.news-card-template');
