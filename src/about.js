@@ -30,7 +30,8 @@ import '@/blocks/glide/glide.css';
 import '@/blocks/glide/__slide/glide__slide.css';
 import '@/blocks/glide/__bullets/glide__bullets.css';
 import '@/blocks/glide/__bullet/glide__bullet.css';
-import '@/blocks/glide/__bullet/--active/glide__bullet--active.css'
+import '@/blocks/glide/__bullet/--active/glide__bullet--active.css';
+import './blocks/glide/__container/glide__container.css';
 
 const gh = new Github();
 gh.getCommits('vcw', 'ya-praktikum-final')
