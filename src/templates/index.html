@@ -37,18 +37,18 @@
         </form>
       </div>
     </div>
-    <main class="container__results">
+    <main class="container__results" style="display: none;">
       <div class="container__max results">
-        <div class="results__header">
+        <!-- <div class="results__header">
           <h2 class="results__title title">Результаты поиска</h2>
           <a href="paper.html" class="results__link">Посмотреть аналитику</a>
         </div>
         <div class="results__cards">
         </div>
-        <button class="results__button button button_theme_simple">Показать ещё</button>
+        <button class="results__button button button_theme_simple">Показать ещё</button> -->
       </div>
     </main>
-    <div class="container__results results" style="display: none;">
+    <!-- <div class="container__results results" style="display: none;">
       <img src="<%=require('../assets/not-found.svg').default%>" alt="Ничего не найдено" class="results__not-found-img">
       <h2 class="title title_size_m results__not-found-title">Ничего не найдено</h2>
       <p class="subtitle results__not-found-subtitle">К сожалению по вашему запросу ничего не найдено.</p>
@@ -56,7 +56,7 @@
     <div class="container__results results" style="display: none;">
       <i class="circle-preloader"></i>
       <p class="subtitle results__preloader-text">Идет поиск новостей...</p>
-    </div>
+    </div> -->
     <div class="container__about">
       <div class="container__max about">
         <img src="<%=require('../assets/avatar.png').default%>" alt="Фото" class="about__photo">
@@ -104,6 +104,20 @@
         <p class="card__source"></p>
       </div>
     </article>
+  </template>
+  <template class="news-template">
+    <div class="results__header">
+      <h2 class="results__title title">Результаты поиска</h2>
+      <a href="paper.html" class="results__link">Посмотреть аналитику</a>
+    </div>
+    <div class="results__cards">
+    </div>
+    <button class="results__button button button_theme_simple">Показать ещё</button>
+  </template>
+  <template class="not-found-template">
+    <img src="<%=require('../assets/not-found.svg').default%>" alt="Ничего не найдено" class="results__not-found-img">
+    <h2 class="title title_size_m results__not-found-title">Ничего не найдено</h2>
+    <p class="subtitle results__not-found-subtitle">К сожалению по вашему запросу ничего не найдено.</p> 
   </template>
 </body>
 </html>

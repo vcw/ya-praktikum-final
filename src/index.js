@@ -72,13 +72,12 @@ const date = new DateExtended().substractDays(6).toISOString().split('T')[0];
 function doSearch(keyword) {
   news.getNews(keyword, date)
   .then(articles => articles.map(article => {
-    const newsCardComponent = new NewsCard(article);
-    return newsCardComponent.makeNewsCard();
+    return new NewsCard(article);
   }))
   .then(cards => {
-    const cardsContainer = document.querySelector('.results__cards');
-    const cardList = new NewsCardList(cards, cardsContainer);
-    cardList.placeCards();
+    const container = document.querySelector('.container__results');
+    const cardList = new NewsCardList(cards, container);
+    cardList.render();
   });
 }
 
