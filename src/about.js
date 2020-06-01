@@ -53,4 +53,5 @@ gh.getCommits('vcw', 'ya-praktikum-final')
           }
         }
       }).mount()
-    });
+    })
+    .catch(error => console.log(`Ошибка: ${error}`));

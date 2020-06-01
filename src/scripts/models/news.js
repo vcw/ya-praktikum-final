@@ -23,7 +23,13 @@ export default class News {
     const url = `https://praktikum.tk/news/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
 
     return fetch(url)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        return Promise.reject(`Ошибка: ${response.status}`);
+      } else {
+        return response.json();
+      }
+    })
     .then(response => this._processResponseWithNews(response))
   }
 }

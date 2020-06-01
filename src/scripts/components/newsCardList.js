@@ -17,6 +17,9 @@ export default class NewsCardList {
     const preloaderTemplate = document.querySelector('.preloader-template');
     this._preloaderTemplate = document.importNode(preloaderTemplate.content, true);
 
+    const errorTemplate = document.querySelector('.error-template');
+    this._errorTemplate = document.importNode(errorTemplate.content, true);
+
     this.render = this.render.bind(this);
     this.showPreloader = this.showPreloader.bind(this);
     this.addCards = this.addCards.bind(this);
@@ -56,6 +59,12 @@ export default class NewsCardList {
   _toggleNotFound(bool) {
     this._container.querySelector('.results').appendChild(this._notFoundTemplate);
     this._container.style.display = 'block';
+  }
+
+  showError() {
+    this._clearContainer();
+    this._container.querySelector('.results').appendChild(this._errorTemplate);
+    this._container.style.display = 'block'; 
   }
 
   showPreloader() {

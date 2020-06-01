@@ -2,7 +2,7 @@ import DateExtended from './dateExtended.js';
 
 export default class Stats {
   constructor(cards, keyword) {
-    this._articles = cards.map(card => card.props);
+    this._articles = cards;
     this._keyword = keyword;
   }
 

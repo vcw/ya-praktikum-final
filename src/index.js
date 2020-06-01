@@ -68,22 +68,32 @@ const API_KEY = '3b4a1ba7f9c947e6a829644748b3bd90';
 
 const news = new News(API_KEY);
 const date = new DateExtended().substractDays(6).toISOString().split('T')[0];
+const container = document.querySelector('.container__results');
+
+function render() {
+  const cardList = new NewsCardList(container);
+  let articles = window.localStorage.getItem('articles');
+  if (articles) {
+    articles = JSON.parse(articles);
+    const cards = articles.map(article => new NewsCard(article));
+    cardList.addCards(cards);
+    cardList.render();
+  }
+}
 
 function doSearch(keyword) {
-  const container = document.querySelector('.container__results');
   const cardList = new NewsCardList(container);
-
   cardList.showPreloader()
 
   news.getNews(keyword, date)
-  .then(articles => articles.map(article => {
-    return new NewsCard(article);
-  }))
-  .then(cards => {
-    window.localStorage.setItem('articles', JSON.stringify(cards));
+  .then(articles => {
+    
+    window.localStorage.setItem('articles', JSON.stringify(articles));
     window.localStorage.setItem('keyword', keyword);
-    cardList.addCards(cards);
-    cardList.render();
+    render()
+  })
+  .catch(error => {
+    cardList.showError();
   });
 }
 
@@ -98,3 +108,5 @@ searchButton.addEventListener('click', event => {
 
   doSearch(keyword);
 })
+
+render();
