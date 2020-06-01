@@ -66,7 +66,7 @@ import DateExtended from './scripts/utils/dateExtended.js';
 
 const API_KEY = '3b4a1ba7f9c947e6a829644748b3bd90';
 
-const news = new News(api_key);
+const news = new News(API_KEY);
 const date = new DateExtended().substractDays(6).toISOString().split('T')[0];
 
 function doSearch(keyword) {
@@ -80,8 +80,8 @@ function doSearch(keyword) {
     return new NewsCard(article);
   }))
   .then(cards => {
-    window.sessionStorage.setItem('articles', JSON.stringify(cards));
-    window.sessionStorage.setItem('keyword', keyword);
+    window.localStorage.setItem('articles', JSON.stringify(cards));
+    window.localStorage.setItem('keyword', keyword);
     cardList.addCards(cards);
     cardList.render();
   });

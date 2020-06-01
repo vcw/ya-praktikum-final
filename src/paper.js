@@ -40,8 +40,8 @@ import './blocks/footer/__navigation/footer__navigation.css';
 
 import Stats from './scripts/utils/stats.js';
 
-const keyword = window.sessionStorage.getItem('keyword');
-const cards = JSON.parse(window.sessionStorage.getItem('articles'));
+const keyword = window.localStorage.getItem('keyword');
+const cards = JSON.parse(window.localStorage.getItem('articles'));
 
 if (keyword && cards) {
   const stats = new Stats(cards, keyword);
