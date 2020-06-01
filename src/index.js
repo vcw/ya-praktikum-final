@@ -64,7 +64,7 @@ import NewsCard from './scripts/components/newsCard.js';
 import NewsCardList from './scripts/components/newsCardList.js';
 import DateExtended from './scripts/utils/dateExtended.js';
 
-const api_key = '3b4a1ba7f9c947e6a829644748b3bd90';
+const API_KEY = '3b4a1ba7f9c947e6a829644748b3bd90';
 
 const news = new News(api_key);
 const date = new DateExtended().substractDays(6).toISOString().split('T')[0];
