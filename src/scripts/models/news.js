@@ -4,7 +4,7 @@ export default class News {
   }
 
   _processResponseWithNews(response) {
-    let articles = response.articles;
+    const articles = response.articles;
     return articles.reduce((accumulator, current) => {
       const { title, publishedAt, description, urlToImage } = current;
       const source = current.source.name;
