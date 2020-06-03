@@ -37,53 +37,26 @@
         </form>
       </div>
     </div>
-    <main class="container__results">
+    <main class="container__results" style="display: none;">
       <div class="container__max results">
-        <div class="results__header">
+        <!-- <div class="results__header">
           <h2 class="results__title title">Результаты поиска</h2>
           <a href="paper.html" class="results__link">Посмотреть аналитику</a>
         </div>
         <div class="results__cards">
-          <article class="card">
-            <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
-            <div class="card__content">
-              <p class="subtitle card__date">2 августа, 2019</p>
-              <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
-            <div class="card__content">
-              <p class="subtitle card__date">2 августа, 2019</p>
-              <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="<%=require('../assets/image_08.jpg').default%>" alt="Национальное достояние – парки" class="card__image">
-            <div class="card__content">
-              <p class="subtitle card__date">2 августа, 2019</p>
-              <h3 class="title title_size_m card__title">Национальное достояние – парки</h3>
-              <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков...</p>
-              <p class="card__source">Лента.ру</p>
-            </div>
-          </article>
         </div>
-        <button class="results__button button button_theme_simple">Показать ещё</button>
+        <button class="results__button button button_theme_simple">Показать ещё</button> -->
       </div>
     </main>
-    <div class="container__results results">
+    <!-- <div class="container__results results" style="display: none;">
       <img src="<%=require('../assets/not-found.svg').default%>" alt="Ничего не найдено" class="results__not-found-img">
       <h2 class="title title_size_m results__not-found-title">Ничего не найдено</h2>
       <p class="subtitle results__not-found-subtitle">К сожалению по вашему запросу ничего не найдено.</p>
     </div>
-    <div class="container__results results">
+    <div class="container__results results" style="display: none;">
       <i class="circle-preloader"></i>
       <p class="subtitle results__preloader-text">Идет поиск новостей...</p>
-    </div>
+    </div> -->
     <div class="container__about">
       <div class="container__max about">
         <img src="<%=require('../assets/avatar.png').default%>" alt="Фото" class="about__photo">
@@ -121,5 +94,38 @@
       <p class="footer__copyright subtitle">© 2020 Илья Бызов</p>
     </footer>
   </div>
+  <template class="news-card-template">
+    <article class="card">
+      <img src="" alt="" class="card__image">
+      <div class="card__content">
+        <p class="subtitle card__date"></p>
+        <h3 class="title title_size_m card__title"></h3>
+        <p class="card__description"></p>
+        <p class="card__source"></p>
+      </div>
+    </article>
+  </template>
+  <template class="news-template">
+    <div class="results__header">
+      <h2 class="results__title title">Результаты поиска</h2>
+      <a href="paper.html" class="results__link">Посмотреть аналитику</a>
+    </div>
+    <div class="results__cards">
+    </div>
+    <button class="results__button button button_theme_simple">Показать ещё</button>
+  </template>
+  <template class="not-found-template">
+    <img src="<%=require('../assets/not-found.svg').default%>" alt="Ничего не найдено" class="results__not-found-img">
+    <h2 class="title title_size_m results__not-found-title">Ничего не найдено</h2>
+    <p class="subtitle results__not-found-subtitle">К сожалению по вашему запросу ничего не найдено.</p> 
+  </template>
+  <template class="preloader-template">
+    <i class="circle-preloader"></i>
+    <p class="subtitle results__preloader-text">Идет поиск новостей...</p>
+  </template>
+  <template class="error-template">
+    <h2 class="title title_size_m results__not-found-title">Во время запроса произошла ошибка.</h2>
+    <p class="subtitle results__not-found-subtitle">Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p> 
+  </template>
 </body>
 </html>
