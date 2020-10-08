@@ -20,9 +20,10 @@ export default class News {
   }
 
   getNews(keyword, fromDate) {
-    const CORSProxy = 'https://cors-anywhere.herokuapp.com/';
-    const url = `${CORSProxy}http://newsapi.org/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
-
+    const CORSProxy = 'http://www.whateverorigin.org/get?url=';
+    const urlWithoutCORSProxy = `http://newsapi.org/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
+    const url = CORSProxy + encodeURIComponent(urlWithoutCORSProxy);
+    
     return fetch(url)
     .then(response => {
       if (!response.ok) {
