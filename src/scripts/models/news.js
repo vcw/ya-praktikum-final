@@ -20,7 +20,8 @@ export default class News {
   }
 
   getNews(keyword, fromDate) {
-    const url = `https://praktikum.tk/news/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
+    https://cors-anywhere.herokuapp.com/
+    const url = `https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
 
     return fetch(url)
     .then(response => {
