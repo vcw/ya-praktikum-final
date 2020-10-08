@@ -23,7 +23,7 @@ git clone https://github.com/vcw/ya-praktikum-final.git
 
 ## Дальнейшие шаги
 
-- `npm run dev` или `yarn run dev`, чтобы запустить проект в режиме разработчика
+- `npm run dev` или `yarn run dev`, чтобы запустить проект в режиме разработчика и сделать его доступным по адресу `http://localhost:9000`
 - `npm run build` или `yarn run build`, чтобы собрать проект в директорию dist
 
 После сборки проекта результат можно задеплоить, для этого есть команда `npm run deploy` или `yarn run deploy`
