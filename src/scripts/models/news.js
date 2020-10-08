@@ -20,9 +20,9 @@ export default class News {
   }
 
   getNews(keyword, fromDate) {
-    const CORSProxy = 'https://test.cors.workers.dev/';
+    const CORSProxy = 'https://quiet-truth-0ab4.vuode.workers.dev/corsproxy/?apiurl=';
     const urlWithoutCORSProxy = `http://newsapi.org/v2/everything?q=${keyword}&from=${fromDate}&pageSize=100&apiKey=${this._apiKey}`;
-    const url = CORSProxy + urlWithoutCORSProxy;
+    const url = CORSProxy + encodeURIComponent(urlWithoutCORSProxy);
     
     return fetch(url)
     .then(response => {
